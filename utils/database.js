@@ -11,6 +11,7 @@ export const connectToDB = async () => {
   }
 
   try {
+    console.log('test2');
     await mongoose.connect(process.env.MONGODB_URI, {
         dbName: "WorldOfPrompts",
         useNewUrlParser: true,
