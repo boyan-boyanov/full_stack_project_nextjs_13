@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
-const PromptCard = ({ post, handlerTagClick, handlerEdit, HandlerDelete }) => {
+const PromptCard = ({ post, handlerTagClick, handlerEdit, handlerDelete }) => {
   const [copied, setCopied] = useState("");
 
   const {data: session} = useSession();
@@ -17,6 +17,8 @@ const PromptCard = ({ post, handlerTagClick, handlerEdit, HandlerDelete }) => {
     navigator.clipboard.writeText(post.prompt);
     setTimeout(() => setCopied(""), 3000);
   };
+
+  
 
   return (
     <div className="prompt_card">
@@ -66,7 +68,7 @@ const PromptCard = ({ post, handlerTagClick, handlerEdit, HandlerDelete }) => {
             Edit
           </p>
           <p className="font-inter text-sm orange_gradient cursor-pointer" 
-          onClick={HandlerDelete}>
+          onClick={handlerDelete}>
            Delete
           </p>
         </div>
