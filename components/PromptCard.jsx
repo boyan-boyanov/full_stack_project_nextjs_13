@@ -47,6 +47,7 @@ const PromptCard = ({ post, handlerTagClick, handlerEdit, HandlerDelete }) => {
             }
             width={12}
             height={12}
+            alt="post image"
           />
         </div>
       </div>
@@ -55,7 +56,7 @@ const PromptCard = ({ post, handlerTagClick, handlerEdit, HandlerDelete }) => {
         className="font-inter text-sm blue_gradient cursor-pointer"
         onClick={() => handlerTagClick && handlerTagClick(post.tag)}
       >
-        {post.tag}
+        #{post.tag}
       </p>
 
       {session?.user.id === post.creator._id && pathName === "/profile" && (
